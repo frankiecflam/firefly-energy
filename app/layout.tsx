@@ -1,6 +1,10 @@
 "use client";
 import "./globals.css";
 import { useState, useEffect } from "react";
+import Header from "@/components/header/header";
+import { Inter } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"] });
 
 function getUserThemePreference() {
   const isDarkModePreferred = window.matchMedia(
@@ -25,7 +29,15 @@ export default function RootLayout({
 
   return (
     <html lang="en" className={theme}>
-      <body className="bg-white dark:bg-black text-black dark:text-white">
+      <body
+        className={`bg-white-100 dark:bg-black-100 text-black dark:text-white ${inter.className}`}
+      >
+        <Header
+          theme={theme}
+          onThemeToggle={() =>
+            setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"))
+          }
+        />
         {children}
       </body>
     </html>
