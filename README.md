@@ -7,7 +7,7 @@
 - [Overview](#overview)
   - [Background](#background)
     - [Tech Stack](#tech-stack)
-    - [structure](#structure)
+    - [Structure](#structure)
     - [Design](#design)
   - [Links](#links)
 - [Social](#social)
@@ -36,6 +36,8 @@
   - Complementary: #FCBF49
 
 ### Links
+
+- GitHub: [https://github.com/frankiecflam/firefly-energy](https://github.com/frankiecflam/firefly-energy)
 
 ## Social
 
