@@ -14,9 +14,9 @@ interface HeaderProps {
 
 export default function Header({ theme, onThemeToggle }: HeaderProps) {
   return (
-    <header className="bg-white-300 dark:bg-black fixed w-[350px] top-0 left-0 bottom-0 py-10 overflow-y-auto">
-      <nav className="h-full flex flex-col justify-between min-h-[700px]">
-        <div>
+    <header className="bg-white-300 dark:bg-black fixed lg:w-[350px] w-screen lg:top-0 left-0 bottom-0 px-4 py-4 lg:px-0 lg:py-10 overflow-y-auto">
+      <nav className="h-full flex lg:flex-col justify-between lg:min-h-[700px]">
+        <div className="hidden lg:block">
           <Link href="/" className="w-2/3 mx-auto block">
             <Image
               src={theme === "light" ? Logo_light : Logo_dark}
@@ -26,16 +26,17 @@ export default function Header({ theme, onThemeToggle }: HeaderProps) {
           </Link>
         </div>
         <HeaderUserInfo />
-        <div className="flex flex-col items-center gap-y-6">
-          <HeaderNavList />
+        <HeaderNavList />
+        <div className="flex lg:flex-col items-center gap-y-4 gap-x-6 fixed top-5 right-5 lg:relative lg:top-0 lg:right-0">
           <HeaderThemeToggler
             onClick={onThemeToggle}
             theme={theme}
             title={theme === "light" ? "use dark mode" : "use light mode"}
           />
+          <Button className="self-center lg:dark:bg-black-100 dark:bg-black-200 lg:bg-white-100 bg-white-200">
+            Log out
+          </Button>
         </div>
-
-        <Button className="self-center">Log out</Button>
       </nav>
     </header>
   );
