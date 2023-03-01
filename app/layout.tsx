@@ -30,15 +30,17 @@ export default function RootLayout({
   return (
     <html lang="en" className={theme}>
       <body
-        className={`bg-white-100 dark:bg-black-100 text-black dark:text-white ${inter.className}`}
+        className={`bg-white-100 text-black dark:bg-black-100 dark:text-white ${inter.className}`}
       >
         <Header
           theme={theme}
-          onThemeToggle={() =>
+          onToggleTheme={() =>
             setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"))
           }
         />
-        {children}
+        <main className="ml-auto min-h-screen py-10 px-4 pb-[100px] sm:px-8 lg:w-[calc(100vw-300px)] lg:pb-10">
+          {children}
+        </main>
       </body>
     </html>
   );
