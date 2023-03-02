@@ -12,7 +12,11 @@ export default function DashboardCard({
   className,
 }: DashboardCardProps) {
   return (
-    <div className={`rounded-md bg-white-200 py-8 px-6 dark:bg-black xl:px-12 ${className? className : ""}`}>
+    <div
+      className={`rounded-md bg-white-300 py-8 px-6 dark:bg-black xl:px-12 ${
+        className ? className : ""
+      }`}
+    >
       <h2 className="text-4xl font-semibold capitalize">{title}</h2>
       {children}
     </div>
